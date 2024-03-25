@@ -1,6 +1,6 @@
 import { StudentModel } from '../models/StudentModel';
 
-export class FormRenderer {
+export default class FormRenderer {
 
     render(students: StudentModel[] = []): string {
 
@@ -16,3 +16,4 @@ export class FormRenderer {
         `;
     }
 }
+A

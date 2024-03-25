@@ -5,6 +5,7 @@
         "build": "webpack"
     },
     "devDependencies": {
+        "babel-plugin-add-module-exports": "^1.0.4",
         "ts-loader": "^9.5.1",
         "typescript": "^4.9.5",
         "webpack": "^5.91.0",

@@ -1,10 +1,7 @@
-/* formEvents.ts */
-
-import { StudentModel } from "./models/StudentModel";
 import { StudentRepository } from "./repository/StudentRepository";
 import { StudentFactory } from "./factory/StudentFactory";
 import { FormRenderer } from "./renderer/FormRenderer";
-import { StudentController } from "../controllers/StudentControllers";
+import { StudentController } from "./controllers/StudentControllers";
 
 const repository = new StudentRepository();
 const factory = new StudentFactory();
@@ -13,7 +10,13 @@ const controller = new StudentController(repository, factory, renderer);
 
 document.addEventListener("DOMContentLoaded", () => {
   // Render the form
-  controller.renderForm();
+  const formHtml = controller.renderForm();
+
+  // Add the form to the DOM
+  const formContainer = document.querySelector("#form-container");
+  if (formContainer) {
+    formContainer.innerHTML = formHtml;
+  }
 
   const form = document.querySelector("#student-registration-form");
   if (form) {

@@ -4,7 +4,7 @@
 import { StudentModel } from '../models/StudentModel';
 
 // Define the StudentRepository class
-export class StudentRepository {
+export default class StudentRepository {
   // Method to register a student
   async registerStudent(student: StudentModel): Promise<Response> {
     try {
