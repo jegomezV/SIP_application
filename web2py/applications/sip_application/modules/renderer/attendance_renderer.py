@@ -32,9 +32,14 @@ class Renderer:
                             OPTION('Absent', _value="absent"),
                             _name=f'attendance-{student_id}',
                             _class="attendance-select",
-                            _data_student_id=student_id,
-                            _data_subject_id=subject_id,
-                            _data_classroom_id=classroom_id)
+                            **{'_data-student-id': student_id,
+                            '_data-subject-id': subject_id,
+                            '_data-classroom-id': classroom_id})
+
+            print(student_id)
+            print(subject_id)
+            print(classroom_id)
+            print("TABLEE")
 
             date_input = INPUT(_type='date', _name=f'date-{student_id}', _class="attendance-date")
             rows.append(TR(TD(row["student"]["name"]),

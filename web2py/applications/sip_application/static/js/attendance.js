@@ -32,7 +32,9 @@ attendanceSelects.forEach((select, index) => {
     // Get the attendance date from the corresponding date input
     const attendanceDate = attendanceDates[index].value;
 
+    console.log(`El tipo de dato de attendanceDate es ${typeof attendanceDate}.`);
     console.log(`La fecha de asistencia es ${attendanceDate}.`);
+    console.log(`El tipo de dato de attendanceDate es ${typeof attendanceDate}.`);
 
     // Create a new FormData object
     let formData = new FormData();
@@ -43,6 +45,8 @@ attendanceSelects.forEach((select, index) => {
     formData.append('subject_id', subjectId);
     formData.append('classroom_id', classroomId);
     formData.append('attendance_date', attendanceDate);
+    console.log("FOIRMM DATA")
+    console.log(formData)
 
     // Make an API call to update the attendance status
     fetch(
@@ -54,6 +58,7 @@ attendanceSelects.forEach((select, index) => {
     )
       .then((response) => {
         if (!response.ok) {
+          console.log(response)
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
@@ -62,6 +67,7 @@ attendanceSelects.forEach((select, index) => {
         console.log('Respuesta del servidor:', data);
       })
       .catch((error) => {
+        console.log(response)
         console.error('Error:', error);
       });
   });

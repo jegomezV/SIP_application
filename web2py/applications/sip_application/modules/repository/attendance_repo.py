@@ -58,6 +58,13 @@ class AttendanceRepository:
         :return: None
         """
         try:
+            print("Updating attendance record")
+            print("Updating attendance record student_id")
+            print(student_id)
+            print("Updating attendance record classroom_id")
+            print(classroom_id)
+            print("Updating attendance record subject_id")
+            print(subject_id)
             # Get the names from the database
             student_query = self.db(self.db.students.id == student_id)
             student = student_query.select(self.db.students.name).first()
