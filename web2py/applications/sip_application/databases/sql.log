@@ -71,3 +71,14 @@ CREATE TABLE "students"(
     "name" VARCHAR(512),
     "email" VARCHAR(512)
 );
+timestamp: 2024-03-26T01:50:45.905329
+CREATE TABLE "auth_user"(
+    "id" SERIAL PRIMARY KEY,
+    "first_name" VARCHAR(128),
+    "last_name" VARCHAR(128),
+    "email" VARCHAR(512),
+    "password" VARCHAR(512),
+    "registration_key" VARCHAR(512),
+    "reset_password_key" VARCHAR(512),
+    "registration_id" VARCHAR(512)
+);

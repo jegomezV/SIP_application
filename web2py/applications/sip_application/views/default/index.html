@@ -13,10 +13,10 @@
     {{if 'message' in globals():}}
     <p class="lead">{{=T('What can I do now?')}}</p>
     <ol style="word-wrap:break-word;">
-      <li>{{=XML(T('To register a student, click on the link %s', A(T('here'),_href=URL('students','students_view'))))}}</li>
+      <li>{{=XML(T('To register a student, click on the link %s', A(T('here'),_href=URL('students','student_view'))))}}</li>
       <li>{{=XML(T('To see the classrooms, click on the link %s', A(T('here'),_href=URL('classrooms','classrooms_view'))))}}</li>
       <li>{{=XML(T('To see the subjects, click on the link %s', A(T('here'),_href=URL('subjects','subjects_view'))))}}</li>
-      <li>{{=XML(T('To see the attendance, click on the link %s', A(T('here'),_href=URL('attendance','attendance_view'))))}}</li>
+      <li>{{=XML(T('To see the attendance, click on the link %s', A(T('here'),_href=URL('attendance','show_attendance'))))}}</li>
     </ol>
     <p class="lead">{{=XML(T('Remember register and login to update the information %s', A(T('here'),_href=URL('default','user/login'))))}}</p>
     {{elif 'content' in globals():}}
