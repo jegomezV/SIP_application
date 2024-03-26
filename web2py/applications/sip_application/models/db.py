@@ -160,21 +160,21 @@ if 'students' not in db.tables:
     db.define_table('students',
         Field('name', 'string', requires=IS_NOT_EMPTY()),
         Field('email', 'string', requires=[IS_EMAIL(), IS_NOT_IN_DB(db, 'students.email')]),
-        migrate=True
+        migrate=False
     )
 
 # Classrooms table
 if 'classrooms' not in db.tables:
     db.define_table('classrooms',
         Field('name', 'string', requires=IS_NOT_EMPTY()),
-        migrate=True
+        migrate=False
     )
 
 # Subjects table
 if 'subjects' not in db.tables:
     db.define_table('subjects',
         Field('name', 'string', requires=IS_NOT_EMPTY()),
-        migrate=True
+        migrate=False
     )
 
 if 'attendance' not in db.tables:
@@ -184,5 +184,5 @@ if 'attendance' not in db.tables:
         Field('subject_id', 'integer', requires=IS_IN_DB(db, 'subjects.id')),  # reference to subjects table
         Field('attendance_date', 'datetime'),
         Field('status', 'string'),
-        migrate=True
+        migrate=False
     )
