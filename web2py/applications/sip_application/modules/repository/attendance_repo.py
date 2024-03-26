@@ -82,13 +82,12 @@ class AttendanceRepository:
 
             # Insert the attendance data into the attendance table
             self.db.attendance.insert(
-                student_id=student_id,
-                classroom_id=classroom_id,
-                subject_id=subject_id,
+                student_name=student_name,
+                classroom_name=classroom_name,
+                subject_name=subject_name,
                 attendance_date=attendance_date,
                 status=attendance_status
             )
-
             self.db.commit()
         except (TypeError, ValueError) as e:
             print(f"Error updating attendance: {e}")

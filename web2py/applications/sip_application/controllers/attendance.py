@@ -6,6 +6,7 @@ It includes functions for showing, creating and updating attendance records.
 from http import HTTPStatus
 from gluon import HTTP
 from datetime import datetime
+from gluon.debug import dbg
 from applications.sip_application.modules.repository.student_repo import StudentRepository
 from applications.sip_application.modules.renderer.attendance_renderer import Renderer
 from applications.sip_application.modules.repository.attendance_repo import AttendanceRepository
@@ -40,6 +41,8 @@ def show_attendance():
 
     renderer = Renderer()
     attendance_table = renderer.render_attendance(data)
+
+
 
     return dict(attendance_table=attendance_table)
 
@@ -113,6 +116,7 @@ def update_attendance():
 
         # Update the attendance record in the database
         success = attendance_repository.update_attendance_repo(
+            db, 
             attendance_data['student_id'], 
             attendance_data['subject_id'], 
             attendance_data['classroom_id'], 
@@ -121,6 +125,6 @@ def update_attendance():
         )
 
         # Return success status as JSON
-        return response.json({'success': success})
+        response.json = dict(success=success)
     except Exception as e:
-        return response.json({'success': False, 'error': str(e)})
+        raise HTTP(HTTPStatus.BAD_REQUEST.value, str(e)) from e

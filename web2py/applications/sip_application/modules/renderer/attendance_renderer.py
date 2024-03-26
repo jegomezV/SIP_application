@@ -1,5 +1,5 @@
 #attendance renderer
-from gluon.html import TABLE, TR, TD, SELECT, OPTION, INPUT
+from gluon.html import TABLE, TR, TH, TD, SELECT, OPTION, INPUT
 
 class Renderer:
     """Class for rendering attendance data."""
