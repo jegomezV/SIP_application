@@ -2,9 +2,9 @@
 
 // Import necessary classes
 import { StudentModel } from '../models/StudentModel';
-import { StudentRepository } from '../repository/StudentRepository';
+import StudentRepository from '../repository/StudentRepository';
 import { StudentFactory } from '../factory/StudentFactory';
-import { FormRenderer } from '../renderer/FormRenderer'
+import FormRenderer from '../renderer/FormRenderer'
 
 // Define the StudentController class
 export class StudentController {

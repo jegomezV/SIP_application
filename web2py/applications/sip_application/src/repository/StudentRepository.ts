@@ -8,9 +8,8 @@ export default class StudentRepository {
   // Method to register a student
   async registerStudent(student: StudentModel): Promise<Response> {
     try {
-      console.log("ENTROO");
       const response = await fetch(
-        'http://127.0.0.1:8000/SIP_app/student/register_student',
+        'http://127.0.0.1:8000/sip_application/students/register_student',
         {
           method: 'POST',
           headers: {

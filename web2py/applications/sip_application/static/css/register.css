@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+form {
+    margin: 0.1em auto;
+    max-width: 600px;
+    background: linear-gradient(to top, #530148, rgb(0, 0, 0), rgb(0, 0, 0));  /* Agrega un gradiente de color de negro a púrpura de abajo hacia arriba */
+    padding: 3em;
+    border-radius: 10px;  /* Aumenta el radio del borde para redondear más los bordes */
+    box-shadow: 0 0 10px purple;  /* Cambia el color de la sombra a púrpura */
+    border: 1px solid #ddd;
+}
+
+form:hover {
+    box-shadow: 0 0 10px rgb(255, 31, 143);  /* Añade una sombra rosa cuando se pasa el ratón por encima del formulario */
+}
+
+form label {
+    display: block;
+ /* Aumenta el margen inferior para separar más las etiquetas de los campos de entrada */
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 0.4em;
+    border: 0.5px solid #000000;
+    border-radius: 5px;  /* Redondea un poco los bordes de los campos de entrada */
+    margin-top: 0.1em;
+}
+
+form input[type="submit"] {
+    background-color: #010002;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 7px rgb(196, 0, 196);
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+form input[type="submit"]:hover {
+    background-color: #5a022b;
+    box-shadow: 0 0 12px rgb(223, 222, 222);
+}
+
+label {
+    margin-bottom: 1px;  /* Ajusta este valor según tus necesidades */
+}
