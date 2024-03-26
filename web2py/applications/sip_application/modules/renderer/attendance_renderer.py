@@ -1,12 +1,9 @@
-#attendance renderer
+# attendance_renderer.py
 from gluon.html import TABLE, TR, TH, TD, SELECT, OPTION, INPUT
 
 class Renderer:
-    """Class for rendering attendance data."""
-    def __init__(self):
-        pass
-
-    def render_attendance(self, data):
+    @staticmethod
+    def render_attendance(data):
         """
         Render attendance data into a HTML table.
 
