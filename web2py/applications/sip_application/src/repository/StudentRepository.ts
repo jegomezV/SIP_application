@@ -6,7 +6,7 @@ import { StudentModel } from '../models/StudentModel';
 // Define the StudentRepository class
 export default class StudentRepository {
   // Method to register a student
-  async registerStudent(student: StudentModel): Promise<Response> {
+  async registerStudentRepo(student: StudentModel): Promise<Response> {
     try {
       const response = await fetch(
         'http://127.0.0.1:8000/sip_application/students/register_student',
@@ -16,7 +16,6 @@ export default class StudentRepository {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(student),
-          credentials: 'include',
         },
       );
   

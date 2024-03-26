@@ -58,13 +58,6 @@ class AttendanceRepository:
         :return: None
         """
         try:
-            print("Updating attendance record")
-            print("Updating attendance record student_id")
-            print(student_id)
-            print("Updating attendance record classroom_id")
-            print(classroom_id)
-            print("Updating attendance record subject_id")
-            print(subject_id)
             # Get the names from the database
             student_query = self.db(self.db.students.id == student_id)
             student = student_query.select(self.db.students.name).first()
@@ -89,12 +82,13 @@ class AttendanceRepository:
 
             # Insert the attendance data into the attendance table
             self.db.attendance.insert(
-                student_name=student_name,
-                classroom_name=classroom_name,
-                subject_name=subject_name,
+                student_id=student_id,
+                classroom_id=classroom_id,
+                subject_id=subject_id,
                 attendance_date=attendance_date,
                 status=attendance_status
             )
+
             self.db.commit()
         except (TypeError, ValueError) as e:
             print(f"Error updating attendance: {e}")

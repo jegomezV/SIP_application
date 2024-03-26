@@ -20,7 +20,6 @@ class StudentFactory:
         """
 
         print("FACTORYYYYYYY")
-        # Here you can add any additional logic you need for creating a student
         student = Student(name, email)
         print(student.name)
         print(student.email)

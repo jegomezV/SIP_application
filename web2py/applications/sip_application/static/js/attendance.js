@@ -15,26 +15,24 @@ attendanceSelects.forEach((select, index) => {
     console.log(`El estado de asistencia seleccionado es ${attendanceStatus}.`);
 
     // Get the student id from the data-student-id attribute
-    const studentId = event.target.getAttribute('data-student-id');
+    const studentId = event.target.getAttribute('data_student_id');
 
     console.log(`El ID del estudiante es ${studentId}.`);
 
     // Get the subject id from the data-subject-id attribute
-    const subjectId = event.target.getAttribute('data-subject-id');
+    const subjectId = event.target.getAttribute('data_subject_id');
 
     console.log(`El ID del sujeto es ${subjectId}.`);
 
     // Get the classroom id from the data-classroom-id attribute
-    const classroomId = event.target.getAttribute('data-classroom-id');
+    const classroomId = event.target.getAttribute('data_classroom_id');
 
     console.log(`El ID del aula es ${classroomId}.`);
 
     // Get the attendance date from the corresponding date input
     const attendanceDate = attendanceDates[index].value;
 
-    console.log(`El tipo de dato de attendanceDate es ${typeof attendanceDate}.`);
     console.log(`La fecha de asistencia es ${attendanceDate}.`);
-    console.log(`El tipo de dato de attendanceDate es ${typeof attendanceDate}.`);
 
     // Create a new FormData object
     let formData = new FormData();
@@ -45,12 +43,10 @@ attendanceSelects.forEach((select, index) => {
     formData.append('subject_id', subjectId);
     formData.append('classroom_id', classroomId);
     formData.append('attendance_date', attendanceDate);
-    console.log("FOIRMM DATA")
-    console.log(formData)
 
     // Make an API call to update the attendance status
     fetch(
-      `http://127.0.0.1:8000/sip_application/attendance/create_attendance`,
+      `http://127.0.0.1:8000/SIP_application/attendance/create_attendance`,
       {
         method: 'POST',
         body: formData,
@@ -58,7 +54,6 @@ attendanceSelects.forEach((select, index) => {
     )
       .then((response) => {
         if (!response.ok) {
-          console.log(response)
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
@@ -67,7 +62,6 @@ attendanceSelects.forEach((select, index) => {
         console.log('Respuesta del servidor:', data);
       })
       .catch((error) => {
-        console.log(response)
         console.error('Error:', error);
       });
   });

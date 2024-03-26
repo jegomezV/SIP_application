@@ -31,13 +31,13 @@ export class StudentController {
   }
 
   // Method to register a student
-  async registerStudent(name: string, email: string): Promise<StudentModel> {
+  async registerStudentController(name: string, email: string): Promise<StudentModel> {
     // Create a new student using the factory
     const student = this.factory.create(name, email);
 
     // Register the student using the repository
     try {
-      await this.repository.registerStudent(student);
+      await this.repository.registerStudentRepo(student);
       return student;
     } catch (error) {
       // If the registration was not successful, throw an error
