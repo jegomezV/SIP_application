@@ -43,12 +43,6 @@ class Renderer:
 
         table = TABLE(
             *rows,
-            _style=(
-                "width: 100%; "
-                "table-layout: auto; "
-                "border-collapse: separate; "
-                "border-spacing: 2em;"
-            ),
             _class="attendance-table"
         )
 

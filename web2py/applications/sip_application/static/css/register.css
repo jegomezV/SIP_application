@@ -1,28 +1,41 @@
 .footer {
     border-top: 1.5px rgb(252, 252, 252) solid;
     background-color: #080808;
+    margin-top: 2em; /* Ajusta este valor según tus necesidades */
 }
 
 #body-student {
-    background: linear-gradient(to top, #000000, rgb(0, 0, 0), rgb(255, 255, 255));
+    background: linear-gradient(to top, #ffffff, rgb(0, 0, 0), rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 #student-registration-form {
-    margin: 6em auto;
+    margin: 2em auto;
     max-width: 600px;
     background: linear-gradient(to top, #fcfcfc, rgb(255, 255, 255), rgb(0, 0, 0));
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(61, 0, 61);
     border: 1px solid #ddd;
+    animation: fadeIn 2s ease-in-out;
 }
 
 #student-registration-form:hover {
     box-shadow: 0 0 10px rgb(122, 0, 122);
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 #student-registration-form label {
     display: block;
+    transition: color 0.2s ease-in-out;
+}
+
+#student-registration-form label:hover {
+    color: #808080;
 }
 
 #student-registration-form input[type="text"] {
@@ -31,6 +44,7 @@
     border: 0.5px solid #000000;
     border-radius: 5px;
     margin-top: 0.1em;
+    transition: border 0.2s ease-in-out;
 }
 
 #student-registration-form input[type="submit"] {
@@ -45,11 +59,11 @@
 }
 
 #student-registration-form input[type="submit"]:hover {
-
     color: rgb(0, 0, 0);
     box-shadow: 0 0 12px rgb(223, 222, 222);
     border: 1.5px solid #ffffff;
 }
+
 
 #student-registration-form label {
     margin-bottom: 1px;
@@ -57,15 +71,104 @@
 
 #h1 {
     color: #ffffff; /* Cambiamos el color a un tono de azul oscuro */
-    font-size: 40px; /* Aumentamos el tamaño de la fuente para que sea más prominente */
+    font-size: 30px; /* Aumentamos el tamaño de la fuente para que sea más prominente */
     text-align: center; /* Mantenemos el texto centrado */
-    padding: 40px; /* Mantenemos el padding */
+    padding: 30px; /* Mantenemos el padding */
     font-family: 'Lato', sans-serif;
- 
     letter-spacing: 2px; /* Añadimos espaciado entre las letras para mejorar la legibilidad */
-    background-color: #000000; /* Añadimos un fondo gris claro para que el título destaque */
+    background-color: #0c0c0c; /* Añadimos un fondo gris claro para que el título destaque */
     border-radius: 10px; /* Añadimos bordes redondeados para suavizar la apariencia */
     box-shadow: -5px 10px 10px rgb(224, 224, 224); /* Añadimos una sombra suave para darle profundidad */
     border: 1px solid #ffffff; /* Agregamos un borde blanco */
     text-shadow: 0.5px 0.5px 3px rgba(255, 255, 255, 0.466);
+}
+
+#bodyy {
+    background-color: #000000;
+}
+
+#paragraph {
+    font-size: 3.5em; /* Ajusta este valor según tus necesidades */
+}
+
+#attendance-table {
+    margin-top: 200px;
+    width: 100%;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background: linear-gradient(to top, #fcfcfc, rgb(0, 0, 0), rgb(39, 39, 39));
+    box-shadow: -5px 5px 5px rgb(224, 224, 224);
+    box-shadow: 0 0 15px rgb(110, 0, 110);
+}
+
+#attendance-table td, #attendance-table th {
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: center;
+}
+
+#attendance-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#attendance-table tr {
+    transition: background-color 0.2s ease;
+}
+
+#attendance-table tr:hover {
+    background-color: #333333;
+}
+
+.attendance-select {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.attendance-select:hover {
+    background-color: #dddddd;
+}
+
+#button {
+    background-color: #080808;
+    color: white;
+    padding: 0.5em 1em;
+    border: 1.5px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgb(196, 0, 196);
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+#button:hover {
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 12px rgb(223, 222, 222);
+    border: 1.5px solid #ffffff;
+}
+
+#buttonRegister {
+    background-color: #080808;
+    color: white;
+    padding: 0.5em 1em;
+    border: 1.5px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgb(196, 0, 196);
+    cursor: pointer;
+    margin-top: 1em;
+    display: block;
+    margin-left: 29.8em;
+}
+
+#buttonRegister:hover {
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 12px rgb(223, 222, 222);
+    border: 1.5px solid #ffffff;
 }

@@ -1,17 +1,13 @@
 {{extend 'layout.html'}}
-
+<link rel="stylesheet" type="text/css" href="../static/css/register.css">
 {{block header}}
-<div class="jumbotron jumbotron-fluid background" style="background-color: #292929; color:white; padding:30px;word-wrap:break-word;">
-  <div class="container center">
-    <h2 class="display-5">Welcome to my application</h2>
-  </div>
-</div>
+    <h2 id="h1" class="display-5">Welcome to my application</h2>
 {{end}}
 
 <div class="row">
   <div class="col-md-12">
     {{if 'message' in globals():}}
-    <p class="lead">{{=T('What can I do now?')}}</p>
+    <p id="paragraph" class="lead">{{=T('What can I do now?')}}</p>
     <ol style="word-wrap:break-word;">
       <li>{{=XML(T('To register a student, click on the link %s', A(T('here'),_href=URL('students','student_view'))))}}</li>
       <li>{{=XML(T('To see the classrooms, click on the link %s', A(T('here'),_href=URL('classrooms','classrooms_view'))))}}</li>
