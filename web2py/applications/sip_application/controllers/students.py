@@ -1,6 +1,6 @@
 # Create an instance of StudentRepository
 from unittest.mock import MagicMock
-from  import student_service
+from applications.sip_application.modules.services.business_logic import student_service
 
 def register_student():
     """Registers a new student."""
