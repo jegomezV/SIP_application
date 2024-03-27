@@ -1,8 +1,6 @@
 # Create an instance of StudentRepository
 from unittest.mock import MagicMock
-student_service = local_import('services.business_logic.student_service')
-from web2py.http import HTTP
-from applications.sip_application.modules.services.business_logic import student_service
+from  import student_service
 
 def register_student():
     """Registers a new student."""
