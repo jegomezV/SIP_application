@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .value;
 
       try {
-        const student = await controller.registerStudent(name, email);
+        const student = await controller.registerStudentController(name, email);
         console.log("Student registered:", student);
       } catch (error) {
         console.error("Error registering student:", error);

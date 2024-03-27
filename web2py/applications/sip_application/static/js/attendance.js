@@ -3,9 +3,6 @@
 // Get all the attendance selects
 const attendanceSelects = document.querySelectorAll('.attendance-select');
 
-// Get all the attendance dates
-const attendanceDates = document.querySelectorAll('.attendance-date');
-
 // Add a change event listener to each select control
 attendanceSelects.forEach((select, index) => {
   select.addEventListener('change', function (event) {
@@ -29,10 +26,6 @@ attendanceSelects.forEach((select, index) => {
 
     console.log(`El ID del aula es ${classroomId}.`);
 
-    // Get the attendance date from the corresponding date input
-    const attendanceDate = attendanceDates[index].value;
-
-    console.log(`La fecha de asistencia es ${attendanceDate}.`);
 
     // Create a new FormData object
     let formData = new FormData();
@@ -42,11 +35,15 @@ attendanceSelects.forEach((select, index) => {
     formData.append('student_id', studentId);
     formData.append('subject_id', subjectId);
     formData.append('classroom_id', classroomId);
-    formData.append('attendance_date', attendanceDate);
+
+    console.log(`STATUS ${attendanceStatus}.`);
+    console.log(`STUDENTID ${studentId}.`);
+    console.log(`DUBJECT ${subjectId}.`);
+    console.log(`CALSS ${classroomId}.`);
 
     // Make an API call to update the attendance status
     fetch(
-      `http://127.0.0.1:8000/SIP_application/attendance/create_attendance`,
+      `http://127.0.0.1:8000/sip_application/attendance/create_attendance`,
       {
         method: 'POST',
         body: formData,

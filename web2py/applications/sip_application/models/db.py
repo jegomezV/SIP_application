@@ -182,7 +182,6 @@ if 'attendance' not in db.tables:
         Field('student_id', 'integer', requires=IS_IN_DB(db, 'students.id')),  # reference to students table
         Field('classroom_id', 'integer', requires=IS_IN_DB(db, 'classrooms.id')),  # reference to classrooms table
         Field('subject_id', 'integer', requires=IS_IN_DB(db, 'subjects.id')),  # reference to subjects table
-        Field('attendance_date', 'datetime'),
         Field('status', 'string'),
         migrate=True
     )

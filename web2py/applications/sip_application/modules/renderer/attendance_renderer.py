@@ -32,9 +32,9 @@ class Renderer:
                             OPTION('Absent', _value="absent"),
                             _name=f'attendance-{student_id}',
                             _class="attendance-select",
-                            _data_student_id=student_id,
-                            _data_subject_id=subject_id,
-                            _data_classroom_id=classroom_id)
+                            _data_student_id=(student_id),
+                            _data_subject_id=(subject_id),
+                            _data_classroom_id=(classroom_id))
 
             rows.append(TR(TD(row["student"]["name"]),
                         TD(row["subject"]["name"]),

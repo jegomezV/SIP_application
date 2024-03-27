@@ -5,7 +5,6 @@ It includes functions for showing, creating and updating attendance records.
 
 from http import HTTPStatus
 from gluon import HTTP
-from datetime import datetime
 from applications.sip_application.modules.repository.student_repo import StudentRepository
 from applications.sip_application.modules.renderer.attendance_renderer import Renderer
 from applications.sip_application.modules.repository.attendance_repo import AttendanceRepository
@@ -41,8 +40,6 @@ def show_attendance():
     renderer = Renderer()
     attendance_table = renderer.render_attendance(data)
 
-
-
     return dict(attendance_table=attendance_table)
 
 def create_attendance():
@@ -52,29 +49,21 @@ def create_attendance():
     data is present, converts the attendance date to a datetime object, and then stores the 
     attendance data in the database.
     """
-    
-    print("CREATE ATTENDANCE")
     # Get the attendance status, student id, subject id, classroom id,
     # and attendance date from the POST data
     attendance_status = request.vars.attendance_status
-    student_id = request.vars.student_id
-    subject_id = request.vars.subject_id
-    classroom_id = request.vars.classroom_id
-    attendance_date = request.vars.attendance_date
-    
-    print(attendance_status)
-    print(student_id)
-    print(subject_id)
-    print(classroom_id)
-    print(attendance_date)
-    print("CREATE ATTENDANCE2")
+    student_id = request.vars.student_id[0] if isinstance(request.vars.student_id, list) else request.vars.student_id
+    subject_id = request.vars.subject_id[0] if isinstance(request.vars.subject_id, list) else request.vars.subject_id
+    classroom_id = request.vars.classroom_id[0] if isinstance(request.vars.classroom_id, list) else request.vars.classroom_id
+
+    # Convert IDs to integers
+    student_id = int(student_id)
+    subject_id = int(subject_id)
+    classroom_id = int(classroom_id)
 
     # Check if all required data is present
-    if not all([attendance_status, student_id, subject_id, classroom_id, attendance_date]):
+    if not all([attendance_status, student_id, subject_id, classroom_id]):
         return response.json(dict(success=False, message="Missing required data"))
-
-    # Convert the attendance date to a datetime object
-    attendance_date = datetime.strptime(attendance_date, '%Y-%m-%d')
 
     # Instantiate AttendanceRepository
     attendance_repo = AttendanceRepository(db)
@@ -84,7 +73,6 @@ def create_attendance():
         student_id,
         classroom_id,
         subject_id,
-        attendance_date,
         attendance_status
     )
 
@@ -107,8 +95,6 @@ def update_attendance():
         if not attendance_data:
             raise HTTP(HTTPStatus.BAD_REQUEST.value, 'Attendance data not provided or empty')
 
-        console.log("DATAAAAAAAA")
-        console.log(attendance_data)
         # Validate attendance data
         if 'student_id' not in attendance_data or not attendance_data['student_id']:
             raise HTTP(HTTPStatus.BAD_REQUEST.value, 'Student ID is required')
@@ -118,8 +104,6 @@ def update_attendance():
             raise HTTP(HTTPStatus.BAD_REQUEST.value, 'Classroom ID is required')
         if 'attendance' not in attendance_data or not attendance_data['attendance']:
             raise HTTP(HTTPStatus.BAD_REQUEST.value, 'Attendance status is required')
-        if 'attendance_date' not in attendance_data or not attendance_data['attendance_date']:
-            raise HTTP(HTTPStatus.BAD_REQUEST.value, 'Attendance date is required')
 
         # Create an instance of AttendanceRepository
         attendance_repository = AttendanceRepository(db)
@@ -130,7 +114,6 @@ def update_attendance():
             attendance_data['student_id'], 
             attendance_data['subject_id'], 
             attendance_data['classroom_id'], 
-            attendance_data['attendance_date'], 
             attendance_data['attendance']
         )
 

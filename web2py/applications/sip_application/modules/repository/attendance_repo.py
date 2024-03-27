@@ -1,7 +1,6 @@
 #attendance repository
 from typing import Optional, Dict
 from gluon import HTTP
-from datetime import datetime
 
 class AttendanceRepository:
     """
@@ -44,7 +43,6 @@ class AttendanceRepository:
     student_id,
     classroom_id,
     subject_id,
-    attendance_date,
     attendance_status
     ):
         """
@@ -53,7 +51,6 @@ class AttendanceRepository:
         :param student_id: An integer representing the student's ID.
         :param classroom_id: An integer representing the classroom's ID.
         :param subject_id: An integer representing the subject's ID.
-        :param attendance_date: A date object representing the attendance date.
         :param attendance_status: A string representing the attendance status.
         :return: None
         """
@@ -70,6 +67,7 @@ class AttendanceRepository:
             classroom = classroom_query.select(self.db.classrooms.name).first()
             if classroom is None:
                 print(f"No classroom found with ID {classroom_id}")
+                print(f"No classroom id: {self.db.classrooms.id}")
                 return
             classroom_name = classroom.name
 
@@ -81,14 +79,13 @@ class AttendanceRepository:
             subject_name = subject.name
 
             # Insert the attendance data into the attendance table
+
             self.db.attendance.insert(
                 student_id=student_id,
                 classroom_id=classroom_id,
                 subject_id=subject_id,
-                attendance_date=attendance_date,
                 status=attendance_status
             )
-
             self.db.commit()
         except (TypeError, ValueError) as e:
             print(f"Error updating attendance: {e}")

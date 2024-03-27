@@ -48,7 +48,7 @@ def upgrade() -> None:
         sa.Column('student_id', sa.Integer, sa.ForeignKey('students.id'), nullable=False),
         sa.Column('classroom_id', sa.Integer, sa.ForeignKey('classrooms.id'), nullable=False),
         sa.Column('subject_id', sa.Integer, sa.ForeignKey('subjects.id'), nullable=False),
-        sa.Column('attendance_date', sa.DateTime, nullable=False),
+        sa.Column('attendance_date', sa.DateTime, nullable=True),
         sa.Column('status', sa.String(50), nullable=False)
     )
 
