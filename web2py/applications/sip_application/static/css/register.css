@@ -1,51 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
+.footer {
+    border-top: 1.5px rgb(252, 252, 252) solid;
+    background-color: #080808;
 }
 
-form {
-    margin: 0.1em auto;
+#body-student {
+    background: linear-gradient(to top, #000000, rgb(0, 0, 0), rgb(255, 255, 255));
+}
+
+#student-registration-form {
+    margin: 6em auto;
     max-width: 600px;
-    background: linear-gradient(to top, #530148, rgb(0, 0, 0), rgb(0, 0, 0));  /* Agrega un gradiente de color de negro a púrpura de abajo hacia arriba */
-    padding: 3em;
-    border-radius: 10px;  /* Aumenta el radio del borde para redondear más los bordes */
-    box-shadow: 0 0 10px purple;  /* Cambia el color de la sombra a púrpura */
+    background: linear-gradient(to top, #fcfcfc, rgb(255, 255, 255), rgb(0, 0, 0));
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(61, 0, 61);
     border: 1px solid #ddd;
 }
 
-form:hover {
-    box-shadow: 0 0 10px rgb(255, 31, 143);  /* Añade una sombra rosa cuando se pasa el ratón por encima del formulario */
+#student-registration-form:hover {
+    box-shadow: 0 0 10px rgb(122, 0, 122);
 }
 
-form label {
+#student-registration-form label {
     display: block;
- /* Aumenta el margen inferior para separar más las etiquetas de los campos de entrada */
 }
 
-form input[type="text"] {
+#student-registration-form input[type="text"] {
     width: 100%;
     padding: 0.4em;
     border: 0.5px solid #000000;
-    border-radius: 5px;  /* Redondea un poco los bordes de los campos de entrada */
+    border-radius: 5px;
     margin-top: 0.1em;
 }
 
-form input[type="submit"] {
-    background-color: #010002;
+#student-registration-form input[type="submit"] {
+    background-color: #080808;
     color: white;
     padding: 0.5em 1em;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 0 7px rgb(196, 0, 196);
+    border: 1.5px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 2px rgb(196, 0, 196);
     cursor: pointer;
     margin-top: 1em;
 }
 
-form input[type="submit"]:hover {
-    background-color: #5a022b;
+#student-registration-form input[type="submit"]:hover {
+
+    color: rgb(0, 0, 0);
     box-shadow: 0 0 12px rgb(223, 222, 222);
+    border: 1.5px solid #ffffff;
 }
 
-label {
-    margin-bottom: 1px;  /* Ajusta este valor según tus necesidades */
+#student-registration-form label {
+    margin-bottom: 1px;
+}
+
+#h1 {
+    color: #ffffff; /* Cambiamos el color a un tono de azul oscuro */
+    font-size: 40px; /* Aumentamos el tamaño de la fuente para que sea más prominente */
+    text-align: center; /* Mantenemos el texto centrado */
+    padding: 40px; /* Mantenemos el padding */
+    font-family: 'Lato', sans-serif;
+ 
+    letter-spacing: 2px; /* Añadimos espaciado entre las letras para mejorar la legibilidad */
+    background-color: #000000; /* Añadimos un fondo gris claro para que el título destaque */
+    border-radius: 10px; /* Añadimos bordes redondeados para suavizar la apariencia */
+    box-shadow: -5px 10px 10px rgb(224, 224, 224); /* Añadimos una sombra suave para darle profundidad */
+    border: 1px solid #ffffff; /* Agregamos un borde blanco */
+    text-shadow: 0.5px 0.5px 3px rgba(255, 255, 255, 0.466);
 }
