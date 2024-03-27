@@ -21,7 +21,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(61, 0, 61);
     border: 1px solid #ddd;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #student-registration-form:hover {
@@ -100,18 +100,20 @@
     background: linear-gradient(to top, #fcfcfc, rgb(0, 0, 0), rgb(39, 39, 39));
     box-shadow: -5px 5px 5px rgb(224, 224, 224);
     box-shadow: 0 0 15px rgb(110, 0, 110);
+    animation: fadeIn 1s ease-in-out;
 }
 
 #attendance-table td, #attendance-table th {
+    width: 40%;
     border-radius: 10px;
     border: 1px solid #ffffff;
-    padding: 8px;
+    padding: 20px; /* Aumenta este valor para agregar más espacio */
     text-align: center;
 }
 
 #attendance-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 20px; /* Aumenta este valor para agregar más espacio en la parte superior */
+    padding-bottom: 20px; /* Aumenta este valor para agregar más espacio en la parte inferior */
     text-align: center;
     background-color: #000000;
     color: #ffffff;
@@ -146,6 +148,7 @@
     box-shadow: 0 0 4px rgb(196, 0, 196);
     cursor: pointer;
     margin-top: 1em;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #button:hover {
@@ -165,6 +168,7 @@
     margin-top: 1em;
     display: block;
     margin-left: 29.8em;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #buttonRegister:hover {
