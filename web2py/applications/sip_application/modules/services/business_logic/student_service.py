@@ -1,7 +1,7 @@
 from typing import Dict, Any
-from gluon import HTTP
 from applications.sip_application.modules.factory.student_fact import StudentFactory
 from applications.sip_application.modules.repository.student_repo import StudentRepository
+
 
 def create_student(student_data: Dict[str, str], db: Any):
     """
@@ -27,8 +27,7 @@ def create_student(student_data: Dict[str, str], db: Any):
         return student
 
     except Exception as e:
-        # Log the error and return it
-        raise HTTP(400, "Error service " + str(e)) from e
+        raise Exception("Error service " + str(e)) from e
 
 def get_all_students(db: Any):
     """
@@ -43,9 +42,8 @@ def get_all_students(db: Any):
 
     try:
         student_repository = StudentRepository(db)
-        students = student_repository.get_all_students_repo()
+        students = student_repository.get_all_students()
         return students
 
     except Exception as e:
-        # Log the error and return it
-        raise HTTP(400, "Error service " + str(e)) from e
+        raise Exception("Error service " + str(e)) from e

@@ -1,3 +1,8 @@
+from gluon.sqlhtml import SQLFORM
+from gluon import current
+
+db = current.globalenv['db']
+
 def classrooms_view():
     """
     This function uses SQLFORM.grid

@@ -1,9 +1,12 @@
 # Create an instance of StudentRepository
-from unittest.mock import MagicMock
-from applications.sip_application.modules.services.business_logic import student_service
+from gluon.http import HTTP
+from http import HTTPStatus
+from gluon import current
+from applications.sip_application.modules.services.business_logic.student_service import create_student
 
-def register_student():
+def register_student(request):
     """Registers a new student."""
+    db = current.globalenv['db']
     if request.env.request_method != 'POST':
         raise HTTP(HTTPStatus.METHOD_NOT_ALLOWED)
 
@@ -20,15 +23,16 @@ def register_student():
 
         # Validate student data
         if 'name' not in student_data or not student_data['name']:
-            raise HTTP(HTTPStatus.BAD_REQUEST, 'Name is required')
+            raise HTTP(HTTPStatus.BAD_REQUEST.value, 'Name is required')
         if 'email' not in student_data or not student_data['email']:
-            raise HTTP(HTTPStatus.BAD_REQUEST, 'Email is required')
+            raise HTTP(HTTPStatus.BAD_REQUEST.value, 'Email is required')
 
         # Create student and save in the database
-        student_service.create_student(student_data, db)
+        create_student(student_data, db)
 
         return dict(success=True)
     except Exception as e:
+        print("Original error: ", e)
         raise HTTP(400, "controller error " + str(e)) from e
 
 

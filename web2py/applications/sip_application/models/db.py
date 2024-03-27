@@ -185,3 +185,11 @@ if 'attendance' not in db.tables:
         Field('status', 'string'),
         migrate=True
     )
+
+# Crear una base de datos de prueba que está diseñada igual que la base de datos "real"
+import copy
+test_db = DAL('sqlite://testing.sqlite')  # Nombre y ubicación del archivo de la base de datos de prueba
+for tablename in db.tables:  # ¡Copiar tablas!
+    if tablename not in test_db.tables:
+        table_copy = [Field(field.name, field.type) for field in db[tablename]]
+        test_db.define_table(tablename, *table_copy)

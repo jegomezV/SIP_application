@@ -6,7 +6,7 @@ import { StudentModel } from '../models/StudentModel';
 // Define the StudentRepository class
 export default class StudentRepository {
   // Method to register a student
-  async registerStudentRepo(student: StudentModel): Promise<Response> {
+  async registerStudentRepo(student: StudentModel): Promise<number> {
     try {
       const response = await fetch(
         'http://127.0.0.1:8000/sip_application/students/register_student',
@@ -24,7 +24,7 @@ export default class StudentRepository {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
   
-      return response;
+      return response.status;
     } catch (error) {
       console.error('There was an error with the fetch operation: ', error);
       throw error;  // Re-throwing the error so it can be caught and handled by the caller
