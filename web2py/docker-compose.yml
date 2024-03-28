@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: jegomez
+      POSTGRES_PASSWORD: Kuroneco-1
+      POSTGRES_DB: sip_app_db
+    ports:
+      - "5432:5432"
+
+  web:
+    image: web2py/web2py
+    build: .
+    ports: 
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      WEB2PY_CONFIG: production
+      POSTGRES_USER: jegomez
+      POSTGRES_PASSWORD: Kuroneco-1
+      POSTGRES_DB: sip_app_db
+      APP_PASSWORD: root
