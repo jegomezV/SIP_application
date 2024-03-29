@@ -1,32 +1,35 @@
 {{extend 'layout.html'}}
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="../static/css/register.css">
     <title>Student View</title>
 </head>
+
 <body id="body-student">
     <script src="{{=URL('static','js/main.js')}}"></script>
-<h1 id="h1">Students register</h1>
+    <h1 id="h1">Students register</h1>
 
-<div id="form-container"></div>
+    <div id="form-container"></div>
 
-<button id="buttonRegister">{{=XML(T('To return, click %s', A(T('here'),_href=URL('default','index'))))}}</button>
+    <button id="buttonRegister">{{=XML(T('To return, click %s', A(T('here'),_href=URL('default','index'))))}}</button>
 
-<script type="module">
-    import { StudentController } from '../static/js/main.js';
+    <script type="module">
+        import { StudentController } from '../static/js/main.js';
 
-    console.log('Starting script...');
+        console.log('Starting script...');
 
-    // Instanciar las clases
-    console.log('Instantiating classes...');
-    var controller = new StudentController();
-    console.log('Classes instantiated.');
+        // Instanciar las clases
+        console.log('Instantiating classes...');
+        var controller = new StudentController();
+        console.log('Classes instantiated.');
 
-    // Renderizar el formulario
-    console.log('Rendering form...');
-    controller.renderForm();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        // Renderizar el formulario
+        console.log('Rendering form...');
+        controller.renderForm();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>

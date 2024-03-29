@@ -1,5 +1,6 @@
 from ...models.student_model import Student
 
+
 class StudentFactory:
     """
     A factory class for creating students.
@@ -7,6 +8,7 @@ class StudentFactory:
     Attributes:
         db: A database connection object.
     """
+
     def create_student(self, name: str, email: str) -> dict:
         """
         The function to create a student.
@@ -19,7 +21,6 @@ class StudentFactory:
             dict: A dictionary containing the name and email of the student.
         """
 
-        print("FACTORYYYYYYY")
         student = Student(name, email)
         print(student.name)
         print(student.email)

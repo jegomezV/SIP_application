@@ -9,7 +9,7 @@ export default class StudentRepository {
   async registerStudentRepo(student: StudentModel): Promise<number> {
     try {
       const response = await fetch(
-        'http://127.0.0.1:8000/sip_application/students/register_student',
+        'https://127.0.0.1:8000/sip_application/students/register_student',
         {
           method: 'POST',
           headers: {

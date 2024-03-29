@@ -1,6 +1,7 @@
 # attendance_renderer.py
 from gluon.html import TABLE, TR, TH, TD, SELECT, OPTION, INPUT
 
+
 class Renderer:
     @staticmethod
     def render_attendance(data):
@@ -47,4 +48,3 @@ class Renderer:
         )
 
         return table
-    

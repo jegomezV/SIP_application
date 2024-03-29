@@ -1,7 +1,9 @@
 from gluon.sqlhtml import SQLFORM
 from gluon import current
 
-db = current.globalenv['db']
+# Decoments to test
+# db = current.globalenv['db']
+
 
 def subjects_view():
     """

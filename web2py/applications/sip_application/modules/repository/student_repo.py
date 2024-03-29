@@ -1,6 +1,7 @@
 from typing import Optional, List, Dict
 from gluon import HTTP
 
+
 class StudentRepository:
     """
     StudentRepository is a class that provides methods
@@ -44,8 +45,7 @@ class StudentRepository:
         :raises ValueError: If either 'name' or 'email'
         is empty or if the email already exists in the database.
         """
-        
-        print("JOIN REPOOOOOO")
+
         print(student)
         if not student['name'] or not student['email']:
             print("Name or email is empty")
@@ -53,10 +53,8 @@ class StudentRepository:
 
         # Check if a student with this email already exists in the database
         if self.student_exists(student['email']):
-            print("YA EXISTE")
             raise HTTP(400, "A student with this email already exists")
 
-        print("sale del repo")
         return self.db.students.insert(name=student['name'], email=student['email'])
 
     def update_student(self, student_id: int, name: str, email: str) -> Optional[dict]:

@@ -1,12 +1,15 @@
 {{extend 'layout.html'}}
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Attendance</title>
     <link rel="stylesheet" type="text/css" href="../static/css/register.css">
 </head>
+
 <body id="body-student">
     <div id="attendance-table">{{=attendance_table}}</div>
     <button id="button">{{=XML(T('To return, click %s', A(T('here'),_href=URL('default','index'))))}}</button>
 </body>
+
 </html>

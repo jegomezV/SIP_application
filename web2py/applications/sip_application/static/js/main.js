@@ -4898,7 +4898,7 @@ class StudentRepository {
     registerStudentRepo(student) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const response = yield fetch('http://127.0.0.1:8000/sip_application/students/register_student', {
+                const response = yield fetch('https://127.0.0.1:8000/sip_application/students/register_student', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -2,6 +2,7 @@
 from unittest.mock import MagicMock
 from applications.sip_application.modules.services.business_logic import student_service
 
+
 def register_student():
     """Registers a new student."""
     if request.env.request_method != 'POST':

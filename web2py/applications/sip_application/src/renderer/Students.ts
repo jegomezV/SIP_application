@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
       try {
         const student = await controller.registerStudentController(name, email);
-        console.log("Student registered:", student);
         Swal.fire({
           icon: 'success',
           title: 'Success',

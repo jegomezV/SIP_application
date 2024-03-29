@@ -21,13 +21,15 @@ def create_student(student_data: Dict[str, str], db: Any):
         print("SERVICEEEEE")
         student_repository = StudentRepository(db)
         student_factory = StudentFactory()
-        student = student_factory.create_student(student_data['name'], student_data['email'])
+        student = student_factory.create_student(
+            student_data['name'], student_data['email'])
         print("go repo")
         student_repository.create_student_repo(student)
         return student
 
     except Exception as e:
         raise Exception("Error service " + str(e)) from e
+
 
 def get_all_students(db: Any):
     """

@@ -27,18 +27,9 @@ attendanceSelects.forEach((select, index) => {
     formData.append("subject_id", subjectId);
     formData.append("classroom_id", classroomId);
 
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ", " + pair[1]);
-    }
-
-    console.log("attendanceStatus:", attendanceStatus);
-    console.log("studentId:", studentId);
-    console.log("subjectId:", subjectId);
-    console.log("classroomId:", classroomId);
-
     // Make an API call to update the attendance status
     fetch(
-      `http://127.0.0.1:8000/sip_application/attendance/create_attendance`,
+      `https://127.0.0.1:8000/sip_application/attendance/create_attendance`,
       {
         method: "POST",
         body: formData,

@@ -1,6 +1,7 @@
-#attendance repository
+# attendance repository
 from typing import Optional, Dict
 from gluon import HTTP
+
 
 class AttendanceRepository:
     """
@@ -14,7 +15,6 @@ class AttendanceRepository:
         """
         self.db = db
 
-
     def get_all_attendance_repo(self):
         """
         Retrieves all attendance records from the 'attendance' collection.
@@ -22,7 +22,6 @@ class AttendanceRepository:
         :return: A list of dictionaries representing the attendance records.
         """
         return self.db(self.db.attendance).select()
-
 
     def get_attendance_by_id_repo(self, attendance_id: int) -> Optional[dict]:
         """
@@ -34,16 +33,16 @@ class AttendanceRepository:
         """
         attendance = self.db.attendance(attendance_id)
         if not attendance:
-            raise ValueError(f"No attendance record found with id {attendance_id}")
+            raise ValueError(
+                f"No attendance record found with id {attendance_id}")
         return attendance
 
-
     def update_attendance_repo(
-    self,
-    student_id,
-    classroom_id,
-    subject_id,
-    attendance_status
+        self,
+        student_id,
+        classroom_id,
+        subject_id,
+        attendance_status
     ):
         """
         Updates an attendance record in the 'attendance' collection.
@@ -79,7 +78,6 @@ class AttendanceRepository:
             subject_name = subject.name
 
             # Insert the attendance data into the attendance table
-
             self.db.attendance.insert(
                 student_id=student_id,
                 classroom_id=classroom_id,
