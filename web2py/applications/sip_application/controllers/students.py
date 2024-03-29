@@ -8,8 +8,6 @@ def register_student():
         raise HTTP(HTTPStatus.METHOD_NOT_ALLOWED)
 
     try:
-        # Print request details for debugging
-        print('request.env:', request.env)
 
         # Extract student data from the request vars
         student_data = request.vars

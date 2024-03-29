@@ -11,5 +11,4 @@ alembic upgrade head
 
 # Cambia al directorio de web2py e inicia la aplicación
 cd /app
-echo "Join app"
-exec python3 web2py.py -a 'root' -c cert.pem -k key.pem -i 0.0.0.0
+exec python web2py.py -a 'root' -c cert.pem -k key.pem -i 0.0.0.0
