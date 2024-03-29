@@ -19,6 +19,7 @@
         "webpack-cli": "^5.1.4"
     },
     "dependencies": {
-        "glob": "^10.3.10"
+        "glob": "^10.3.10",
+        "sweetalert2": "^11.10.7"
     }
 }

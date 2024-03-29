@@ -4,10 +4,10 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: path.resolve(__dirname, './renderer/attendance.js'), // Cambia esta línea
+  entry: path.resolve(__dirname, './renderer/Students.ts'), // Cambia esta línea
   output: {
     path: path.resolve(__dirname, '../dist'), // Cambia esta línea
-    filename: 'attendance.js', // Cambia esta línea
+    filename: 'main.js', // Cambia esta línea
     library: '[name]', // Cambia esta línea
     libraryTarget: 'umd',
   },
